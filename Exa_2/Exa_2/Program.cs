@@ -1,4 +1,9 @@
+using Exa_2.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionStrings = builder.Configuration.GetConnectionString("Basedefault2");
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(connectionStrings));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
