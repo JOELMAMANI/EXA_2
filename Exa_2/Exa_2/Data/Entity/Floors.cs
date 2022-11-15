@@ -38,9 +38,13 @@ namespace Exa_2.Data.Entity
         [Display(Name = "Cantidad de plantines  ")]
         public Double? Planting_amount { get; set; }
 
+       
+        
+
+
         [Display(Name = "Planta vendida? ")]
 
-        public bool? Plant_sold { set; get; }
+        public bool Plant_sold { set; get; }
         [Display(Name = "Es una planta medicinal? ")]
         public bool Medicinal_plants { set; get; }
         [Display(Name = "Es una planta de interiores? ")]

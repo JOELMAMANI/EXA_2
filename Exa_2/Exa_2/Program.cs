@@ -1,4 +1,5 @@
 using Exa_2.Data;
+using Exa_2.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var connectionStrings = builder.Configuration.GetConnectionString("Basedefault2"
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(connectionStrings));
 
 // Add services to the container.
+builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
